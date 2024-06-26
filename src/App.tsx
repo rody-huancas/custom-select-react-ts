@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Select } from "./Select";
 
 const options = [
@@ -9,7 +10,11 @@ const options = [
 ];
 
 const App = () => {
-  return <Select options={options} onChange={() => {}} />;
+  const [value, setValue] = useState(options[0]);
+
+  return (
+    <Select options={options} value={value} onChange={(o) => setValue(o)} />
+  );
 };
 
 export default App;
